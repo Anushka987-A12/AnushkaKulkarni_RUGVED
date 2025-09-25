@@ -1,6 +1,0 @@
-a=int(input("Enter number : "))
-l=len(a)
-l2=int(l/2)
-p=0
-def hillno(a):
-    for i in range()
