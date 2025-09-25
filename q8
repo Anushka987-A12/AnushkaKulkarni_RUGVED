@@ -1,0 +1,18 @@
+def stringsplit(a,n):
+    if len(a)%n!=0:
+        print("Sorry,not possible for this string length")
+    l=""
+    l2=[]
+    q=len(a)
+    d=int(q/n)
+    for j in range(0,d):
+        for i in range(0,n):
+            l+=a[i]
+            a.pop(i)
+            q=q-1
+        l2.append(l)
+    print(l2)
+z=input("Enter a string: ")
+y=int(input("Enter no. of charachters in each segment"))
+w=list(z)
+stringsplit(w,y)

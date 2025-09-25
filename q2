@@ -1,0 +1,118 @@
+x=input("Enter a string: ")
+a=sorted(x)
+print(''.join(a))
+ac=0
+bc=0
+cc=0
+dc=0
+ec=0
+fc=0
+gc=0
+hc=0
+ic=0
+jc=0
+kc=0
+lc=0
+mc=0
+nc=0
+oc=0
+pc=0
+qc=0
+rc=0
+sc=0
+tc=0
+uc=0
+vc=0
+wc=0
+xc=0
+yc=0
+zc=0
+for i in ''.join(a) :
+    if i in "aA":
+        ac+=1
+    if i in "bB":
+        bc+=1
+    if i in "cC":
+        cc+=1
+    if i in "dD":
+        dc+=1
+    if i in "eE":
+        ec+=1
+    if i in "fF":
+        fc+=1
+    if i in "gG":
+        gc+=1
+    if i in "hH":
+        hc+=1
+    if i in "iI":
+        ic+=1
+    if i in "jJ":
+        jc+=1
+    if i in "kK":
+        kc+=1
+    if i in "lL":
+        lc+=1
+    if i in "mM":
+        mc+=1
+    if i in "nN":
+        nc+=1
+    if i in "oO":
+        oc+=1
+    if i in "pP":
+        pc+=1
+    if i in "qQ":
+        qc+=1
+    if i in "rR":
+        rc+=1
+    if i in "sS":
+        sc+=1
+    if i in "tT":
+        tc+=1
+    if i in "uU":
+        uc+=1
+    if i in "vV":
+        vc+=1
+    if i in "wW":
+        wc+=1
+    if i in "xX":
+        xc+=1
+    if i in "yY":
+        yc+=1
+    if i in "zZ":
+        zc+=1
+
+print("count of:\n")
+print("a = ",ac)
+print("b = ",bc)
+print("c = ",cc)
+print("d = ",dc)
+print("e = ",ec)
+print("f = ",fc)
+print("g = ",gc)
+print("h = ",hc)
+print("i = ",ic)
+print("j = ",jc)
+print("k = ",kc)
+print("l = ",lc)
+print("m = ",mc)
+print("n = ",nc)
+print("o = ",oc)
+print("p = ",pc)
+print("q = ",qc)
+print("r = ",rc)
+print("s = ",sc)
+print("t = ",tc)
+print("u = ",uc)
+print("v = ",vc)
+print("w = ",wc)
+print("x = ",xc)
+print("y = ",yc)
+print("z = ",zc)
+
+
+
+
+
+         
+
+

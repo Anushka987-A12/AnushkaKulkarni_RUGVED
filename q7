@@ -1,0 +1,8 @@
+def fibonacci(n):
+    l=[0,1]
+    for i in range(0,n-1):
+        l.append(l[-1]+l[-2])
+    for j in l:
+        print(j)
+a=int(input("Enter the no. of fibonacci terms to be printed : "))
+fibonacci(a)
