@@ -1,0 +1,9 @@
+def triple_and(q,r,t):
+    if a and b and c:
+        return True
+    return False
+a=input("Enter first parameter: ")
+b=input("Enter second parameter: ")
+c=input("Enter third parameter: ")
+x=triple_and(a,b,c)
+print(x)
