@@ -1,5 +1,5 @@
 import cv2 as cv
-cap=cv.VideoCapture(r"Ball_Tracking.mp4")
+cap=cv.VideoCapture("Ball_Tracking.mp4")
 while True:
     ret,frame=cap.read()
     cv.imshow("frame",frame)
