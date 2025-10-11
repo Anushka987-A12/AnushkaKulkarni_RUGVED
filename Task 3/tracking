@@ -1,1 +1,10 @@
-import cv2 as cv2
+import cv2 as cv
+cap=cv.VideoCapture(r"C:\Users\anush\Downloads\Ball_Tracking.mp4")
+while True:
+    ret,frame=cap.read()
+    cv.imshow("frame",frame)
+    key=cv.waitKey(30)
+    if Key == 27:
+        break
+cap.release()
+cv.destroyAllWindows()
