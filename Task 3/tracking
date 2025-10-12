@@ -1,5 +1,5 @@
 import cv2 as cv
-tracker = cv.Tracker()
+tracker = cv.TrackerKCF_create()
 cap=cv.VideoCapture(r"C:\Users\anush\OneDrive\Documents\GitHub\AnushkaKulkarni_RUGVED\Ball_Tracking.mp4")
 obj_detector=cv.createBackgroundSubtractorMOG2()
 while True:
