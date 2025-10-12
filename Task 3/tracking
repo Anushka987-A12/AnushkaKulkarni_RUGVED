@@ -1,11 +1,14 @@
 import cv2 as cv
 cap=cv.VideoCapture(r"C:\Users\anush\OneDrive\Documents\GitHub\AnushkaKulkarni_RUGVED\Ball_Tracking.mp4")
+obj_detector=cv.createBackgroundSubtractorMOG2()
 while True:
     ret,frame=cap.read()
     if ret:
           cv.imshow("frame",frame)
+          mask=obj_detector.apply(frame)
+          cv.imshow('mask',mask)
           key=cv.waitKey(30)
-          if Key == 27:
+          if key == 27:
              break
     else:
         break
