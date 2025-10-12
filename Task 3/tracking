@@ -1,19 +1,13 @@
 import cv2 as cv
 tracker = cv.TrackerKCF_create()
 cap=cv.VideoCapture(r"C:\Users\anush\OneDrive\Documents\GitHub\AnushkaKulkarni_RUGVED\Ball_Tracking.mp4")
-obj_detector=cv.createBackgroundSubtractorMOG2()
 while True:
     ret,frame=cap.read()
     if ret:
           cv.imshow("frame",frame)
-          mask=obj_detector.apply(frame)
-          contours , _ = cv.findContours(mask,cv.RETR_TREE,cv.CHAIN_APPROX_SIMPLE)
-          for cnt in contours:
-              area=cv.contourArea(cnt)
-              cv.drawContours(frame,[cnt],-1,(0,255,0),2)
-          cv.imshow('mask',mask)
           if cv.waitKey(1) & 0xff==ord('q'):
              break
+          bbox=cv.selectROI(frame,False)
     else:
         break
 cap.release()
