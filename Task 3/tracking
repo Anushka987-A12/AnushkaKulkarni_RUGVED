@@ -7,7 +7,11 @@ while True:
           cv.imshow("frame",frame)
           if cv.waitKey(1) & 0xff==ord('q'):
              break
+          #creating bounding box
           bbox=cv.selectROI(frame,False)
+          #initializing tracker
+          o=tracker.init(frame,bbox)
+          cv.destroyWindow("ROI selector")
     else:
         break
 cap.release()
