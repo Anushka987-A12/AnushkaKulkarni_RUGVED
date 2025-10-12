@@ -12,6 +12,16 @@ while True:
           #initializing tracker
           o=tracker.init(frame,bbox)
           cv.destroyWindow("ROI selector")
+    while True:
+        o,frame=video.read()
+        o,bbox=tracker.update(frame)
+        if o:
+            p1=(int(bbox[0]),int(bbox[1]))
+            p2=(int(bbox[0])+int(bbox[2])),(int(bbox[1]),int(bbox[3]))
+            cv.rectangle(frame,p1,p2,(0,0,255),2,2)
+        cv.imshow("tracking",frame)
+        if cv.waitKey(1) & 0xff==ord('q'):
+             break
     else:
         break
 cap.release()
