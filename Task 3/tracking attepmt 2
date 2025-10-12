@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 cap=cv.VideoCapture(r"C:\Users\anush\OneDrive\Documents\GitHub\AnushkaKulkarni_RUGVED\Ball_Tracking.mp4")
-obj_detector=cv.createBackgroundSubtractorMOG2()
+obj_detector=cv.createBackgroundSubtractorMOG2(history=100,varThreshold=50)
 while True:
     ret,frame=cap.read()
     mask=obj_detector.apply(frame)
@@ -10,11 +10,12 @@ while True:
         #extract region of interest
         height,width,_=frame.shape
         print(height,width)
-        roi=frame[300:400,200:500]
+        #roi=frame[100:400,200:500]
         #remove noise
         area=cv.contourArea(cnt)
         if 150 < area:
             cv.drawContours(frame,[cnt],-1,(0,0,255),2)
+    #cv.imshow("roi",roi)
     cv.imshow("frame",frame)
     cv.imshow('mask',mask)
     if cv.waitKey(1) & 0xff==ord('q'):
