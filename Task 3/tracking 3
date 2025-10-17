@@ -1,0 +1,18 @@
+import cv2 as cv
+import numpy as np
+cap=cv.VideoCapture(r"C:\Users\anush\OneDrive\Documents\GitHub\AnushkaKulkarni_RUGVED\Ball_Tracking.mp4")
+while True:
+    ret,frame=cap.read()
+    hsv=cv.cvtColor(frame,cv.COLOR_BGR2HSV)
+    lowrange=np.array([186, 252, 33])
+    highrange=np.array([33, 252, 73])
+    mask=cv.inRange(hsv,lowrange,highrange)
+    result = cv.bitwise_and(frame, frame, mask=mask)
+    cv.imshow("frame",frame)
+    cv.imshow("result",result)
+    cv.imshow("mask",mask)
+    cv.imshow("hsv",hsv)
+    if cv.waitKey(1) & 0xff==ord('q'):
+        break
+cap.release()
+cv.destroyAllWindows()
