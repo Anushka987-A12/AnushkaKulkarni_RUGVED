@@ -1,22 +1,22 @@
 import cv2 as cv
 import numpy as np
 cap=cv.VideoCapture(r"C:\Users\anush\OneDrive\Documents\GitHub\AnushkaKulkarni_RUGVED\Ball_Tracking.mp4")
-obj_detector=cv.createBackgroundSubtractorMOG2(history=100,varThreshold=50)
 while True:
     ret,frame=cap.read()
     hsv=cv.cvtColor(frame,cv.COLOR_BGR2HSV)
-    lowrange=np.array([132, 252, 3])
-    highrange=np.array([3, 252, 86])
+    lowrange=np.array([172, 242, 41q])
+    highrange=np.array([41, 242, 68])
     mask=cv.inRange(hsv,lowrange,highrange)
-    contours , _ = cv.findContours(mask,cv.RETR_TREE,cv.CHAIN_APPROX_SIMPLE)
+    result = cv.bitwise_and(hsv, hsv, mask=mask)
+    contours , _ = cv.findContours(result,cv.RETR_TREE,cv.CHAIN_APPROX_SIMPLE)
     for cnt in contours:
         area=cv.contourArea(cnt)
         cv.drawContours(frame,[cnt],-1,(0,0,255),2)
         x,y,w,h=cv.boundingRect(cnt)
         cv.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),3)
     cv.imshow("frame",frame)
-    cv.imshow('mask',mask)
-    if cv.waitKey(1) & 0xff==ord('q'):
+    cv.imshow("mask",np.hstack([mask,result]))
+    if cv.waitKey(frameTime) & 0xff==ord('q'):
         break
 cap.release()
 cv.destroyAllWindows()
